@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYBE | Entertainment & Discover</title>
+<meta name="description" content="Discover amazing videos, fun stories and entertainment from around the world.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090711;color:white;font-family:Arial,sans-serif}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;background:#100b1c;border-bottom:1px solid #352047;position:sticky;top:0}
+.logo{font-size:27px;font-weight:900;letter-spacing:3px;color:#bd80ff}
+nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{text-align:center;padding:85px 20px;background:radial-gradient(circle at center,#492078,#10091d 65%)}
+.hero h1{font-size:clamp(40px,8vw,70px);margin:0 0 15px}
+.hero h1 span{color:#ce80ff}
+.hero p{color:#c8bdd5;line-height:1.8}
+.btn{display:inline-block;background:linear-gradient(90deg,#8a39dc,#d34bdc);padding:14px 25px;border-radius:30px;color:white;text-decoration:none;font-weight:bold;margin-top:15px}
+.container{max-width:1150px;margin:auto;padding:35px 20px}
+h2{font-size:27px}
+.categories{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.categories button{background:#21152e;border:1px solid #563477;color:white;padding:11px 18px;border-radius:25px;cursor:pointer}
+.categories button:hover{background:#8239c5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#171020;border:1px solid #38234b;border-radius:15px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-5px);border-color:#bc72ff}
+.card img{width:100%;height:190px;object-fit:cover}
+.card h3{padding:0 15px;margin-top:15px}
+.card p{padding:0 15px 18px;color:#b9afc4;line-height:1.6;font-size:14px}
+.tag{color:#d28aff;font-size:11px;text-transform:uppercase;padding:0 15px;letter-spacing:2px}
+.banner{margin-top:45px;padding:35px;text-align:center;background:#20132d;border-radius:18px}
+footer{text-align:center;padding:30px;color:#a99bb8;border-top:1px solid #352047;margin-top:45px}
+@media(max-width:600px){nav a{margin-left:8px;font-size:12px}.hero{padding:65px 15px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">VYBE.</div>
+<nav>
+<a href="#">Home</a>
+<a href="#discover">Discover</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Discover Your <span>VYBE.</span></h1>
+<p>Entertainment, amazing stories, creative ideas and videos.<br>Something new to discover every day.</p>
+<a class="btn" href="#discover">Explore Now →</a>
+</section>
+
+<main class="container" id="discover">
+<h2>✦ Explore Trending</h2>
+<div class="categories">
+<button onclick="filter('all')">All</button>
+<button onclick="filter('fun')">Fun</button>
+<button onclick="filter('nature')">Nature</button>
+<button onclick="filter('art')">Art</button>
+<button onclick="filter('travel')">Travel</button>
+</div>
+
+<div class="grid" id="grid">
+<article class="card" data-type="fun">
+<img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=700" alt="Entertainment">
+<div class="tag">Entertainment</div>
+<h3>Discover Something Amazing</h3>
+<p>Explore interesting moments and entertaining discoveries from around the world.</p>
+</article>
+
+<article class="card" data-type="nature">
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700" alt="Nature">
+<div class="tag">Nature</div>
+<h3>Beautiful Places</h3>
+<p>Discover breathtaking landscapes and beautiful places around the planet.</p>
+</article>
+
+<article class="card" data-type="art">
+<img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=700" alt="Art">
+<div class="tag">Creative</div>
+<h3>Creative Inspiration</h3>
+<p>Colorful ideas, creativity and inspiration to make your day better.</p>
+</article>
+
+<article class="card" data-type="travel">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Travel">
+<div class="tag">Travel</div>
+<h3>Explore The World</h3>
+<p>Take a virtual journey and discover unforgettable destinations.</p>
+</article>
+
+<article class="card" data-type="fun">
+<img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=700" alt="Music">
+<div class="tag">Music</div>
+<h3>Feel The Music</h3>
+<p>Enjoy the energy of live entertainment and unforgettable experiences.</p>
+</article>
+
+<article class="card" data-type="nature">
+<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=700" alt="Ocean">
+<div class="tag">Ocean</div>
+<h3>Relax By The Ocean</h3>
+<p>Take a break and enjoy the peaceful beauty of the ocean.</p>
+</article>
+</div>
+
+<div class="banner" id="about">
+<h2>Welcome to VYBE</h2>
+<p>Your destination for entertainment and discovery.</p>
+</div>
+</main>
+
+<footer>
+<p>© 2026 VYBE. All Rights Reserved.</p>
+<p>Entertainment • Creativity • Discovery</p>
+</footer>
+
+<script>
+function filter(type){
+document.querySelectorAll('.card').forEach(card=>{
+card.style.display=(type==='all'||card.dataset.type===type)?'block':'none';
+});
+}
+</script>
+</body>
+</html>
